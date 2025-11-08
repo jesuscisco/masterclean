@@ -29,8 +29,38 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Despliegue en Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Sigue estos pasos para desplegar este proyecto en Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1) Requisitos
+- Node.js 18.18 o superior (Vercel ya lo usa por defecto).
+- Repositorio en GitHub/GitLab/Bitbucket con este código.
+
+2) Build local (opcional pero recomendado)
+```powershell
+npm ci
+npm run build
+npm start
+```
+Abre http://localhost:3000 para verificar que la build es correcta.
+
+3) Importar en Vercel
+- Ve a https://vercel.com/new y selecciona el repo.
+- Framework Preset: Next.js (detección automática).
+- Build Command: `next build` (por defecto).
+- Output: gestionado automáticamente por Vercel para Next.js.
+- Variables de entorno: no se requieren actualmente.
+
+4) Notas de configuración
+- Se activó `eslint.ignoreDuringBuilds` en `next.config.ts` para que las builds no fallen por errores de ESLint mientras iteras. Recomendado: ejecutar `npm run lint` y corregir advertencias/errores con calma.
+- Tailwind CSS v4 ya está configurado en `app/globals.css` y `tailwind.config.ts`.
+- Si usas imágenes remotas, define dominios/`remotePatterns` en `next.config.ts` (sección `images`). No es necesario si sólo usas imágenes locales en `public/`.
+
+5) Dominio y producción
+- Después del primer deploy, asigna un dominio (opcional) en el Dashboard de Vercel.
+- Los nuevos pushes a la rama configurada dispararán deploys automáticos.
+
+Referencias:
+- Docs de despliegue Next.js: https://nextjs.org/docs/app/building-your-application/deploying
+- Dashboard de Vercel: https://vercel.com/dashboard
