@@ -3,7 +3,7 @@ import type { Config } from "tailwindcss";
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -26,6 +26,7 @@ const config = {
           600: "#0D2A1F",
         },
         blue: {
+          400: "#059dc7",
           500: "#79B5EC",
           600: "#152432",
         },
@@ -38,6 +39,7 @@ const config = {
           200: "#E8E9E9",
         },
         dark: {
+          100: "#514a4d",
           200: "#0D0F10",
           300: "#131619",
           400: "#1A1D21",
